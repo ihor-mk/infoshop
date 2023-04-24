@@ -1,4 +1,4 @@
-﻿namespace InfoShop.Core.DAL.Entities.Enums
+﻿namespace InfoShop.Core.Common.Enums
 {
     public enum CommunicationType
     {
