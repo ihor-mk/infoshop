@@ -1,0 +1,12 @@
+﻿using InfoShop.Core.DAL.Entities.Enums;
+
+namespace InfoShop.Core.DAL.Entities
+{
+    public class IspContact
+    {
+        public long Id { get; set; }
+        public CommunicationType CommunicationType { get; set; }
+        public string Value { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+    }
+}
