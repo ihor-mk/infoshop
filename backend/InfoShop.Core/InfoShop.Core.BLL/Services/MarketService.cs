@@ -28,5 +28,15 @@ namespace InfoShop.Core.BLL.Services
                 .Select(m => _mapper.Map<MarketDto>(m))
                 .ToListAsync();
         }
+
+        public async Task<MarketDto> GetMarketAsync(long id)
+        {
+            var market = await _context.Markets
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            var marketDto = _mapper.Map<MarketDto>(market);
+
+            return marketDto;
+        }
     }
 }

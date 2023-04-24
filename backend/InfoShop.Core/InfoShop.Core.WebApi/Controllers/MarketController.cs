@@ -6,7 +6,7 @@ namespace InfoShop.Core.WebApi.Controllers
 {
 
     [ApiController]
-    [Route("[controller]")]
+    [Route("markets")]
     public class MarketController : ControllerBase
     {
         private readonly IMarketService _marketService;
@@ -20,6 +20,13 @@ namespace InfoShop.Core.WebApi.Controllers
         {
             var markets = await _marketService.GetAllMarketsAsync();
             return Ok(markets);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> CreateMarket(NewMarketDto newMarket)
+        {
+            var market = await _marketService.CreateMarketAsync(newMarket);
+            return Ok(market);
         }
     }
 }
