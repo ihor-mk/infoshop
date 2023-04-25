@@ -19,6 +19,8 @@ namespace InfoShop.Core.BLL.Services
             await _context.Markets.AddAsync(market);
             await _context.SaveChangesAsync();
 
+            Console.WriteLine(market.Id);
+
             return marketDto;
         }
 

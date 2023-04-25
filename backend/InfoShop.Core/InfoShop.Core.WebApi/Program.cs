@@ -14,7 +14,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(cfg =>
-    cfg.AddProfile<MarketProfile>());
+    {
+        cfg.AddProfile<MarketProfile>();
+        cfg.AddProfile<IspProfile>();
+    });
 
 builder.Services.AddTransient<IMarketService, MarketService>();
 

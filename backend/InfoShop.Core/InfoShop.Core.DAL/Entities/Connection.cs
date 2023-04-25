@@ -1,5 +1,4 @@
-﻿
-using InfoShop.Core.Common.Enums;
+﻿using InfoShop.Core.Common.Enums;
 
 namespace InfoShop.Core.DAL.Entities
 {

@@ -8,5 +8,6 @@
         public string Phone { get; set; } = string.Empty;
         public string IntrenalNumber { get; set; } = string.Empty;
         public ICollection<Connection> Connections { get; set; } = new List<Connection>();
+        public bool IsActive { get; set; } = true;
     }
 }

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InfoShop.Core.DAL.Migrations
 {
     [DbContext(typeof(InfoShopCoreContext))]
-    [Migration("20230424082208_InitialCreate")]
+    [Migration("20230425071911_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -154,6 +154,9 @@ namespace InfoShop.Core.DAL.Migrations
                     b.Property<string>("IntrenalNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
