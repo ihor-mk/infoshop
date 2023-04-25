@@ -20,6 +20,7 @@ builder.Services.AddAutoMapper(cfg =>
     });
 
 builder.Services.AddTransient<IMarketService, MarketService>();
+builder.Services.AddTransient<IIspService, IspService>();
 
 builder.Services.AddDbContext<InfoShopCoreContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("InfoShopCoreDBConnection")));

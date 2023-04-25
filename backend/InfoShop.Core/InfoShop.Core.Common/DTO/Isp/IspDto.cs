@@ -1,4 +1,6 @@
-﻿namespace InfoShop.Core.Common.DTO.Isp
+﻿using InfoShop.Core.Common.DTO.Isp.IspContact;
+
+namespace InfoShop.Core.Common.DTO.Isp
 {
     public  class IspDto
     {
