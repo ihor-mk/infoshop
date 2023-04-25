@@ -8,5 +8,7 @@ namespace InfoShop.Core.DAL.Entities
         public CommunicationType CommunicationType { get; set; }
         public string Value { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
+        public long IspId { get; set; }
+        public Isp Isp { get; set; } = new Isp();
     }
 }

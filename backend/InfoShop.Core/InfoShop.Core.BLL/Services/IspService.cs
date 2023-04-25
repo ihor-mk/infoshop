@@ -2,8 +2,10 @@
 using InfoShop.Core.BLL.Interfaces;
 using InfoShop.Core.BLL.Services.Abstract;
 using InfoShop.Core.Common.DTO.Isp;
+using InfoShop.Core.Common.DTO.Isp.IspContact;
 using InfoShop.Core.DAL.Context;
 using InfoShop.Core.DAL.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace InfoShop.Core.BLL.Services
 {
@@ -27,9 +29,22 @@ namespace InfoShop.Core.BLL.Services
             return ispDto;
         }
 
-        public Task<ICollection<IspDto>> GetAllIspAsync()
+        public async Task<ICollection<IspDto>> GetAllIspAsync()
         {
-            throw new NotImplementedException();
+            return _mapper.Map<ICollection<IspDto>>(await _context.Isps.ToListAsync())
+                .GroupJoin(_context.IspContacts,
+                    isp => isp.Id,
+                    contact => contact.IspId,
+                    (isp, cont) => new IspDto
+                    {
+                        Id = isp.Id,
+                        ContractNumber = isp.ContractNumber,
+                        ContractWith = isp.ContractWith,
+                        Description = isp.Description,
+                        IspContacts = _mapper.Map<ICollection<IspContactDto>>(cont),
+                        Name = isp.Name
+                    })
+                .ToList();
         }
 
         public Task<IspDto> GetIspAsync(long id)

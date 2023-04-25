@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace InfoShop.Core.WebApi.Controllers
 {
     [ApiController]
-    [Route("isp")]
+    [Route("isps")]
     public class IspController : ControllerBase
     {
         private readonly IIspService _ispService;
@@ -13,6 +13,13 @@ namespace InfoShop.Core.WebApi.Controllers
         public IspController (IIspService ispService)
         {
             _ispService = ispService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<ICollection<IspDto>>> GetAllIsps()
+        {
+            var isps = await _ispService.GetAllIspAsync();
+            return Ok(isps);
         }
 
         [HttpPut]
