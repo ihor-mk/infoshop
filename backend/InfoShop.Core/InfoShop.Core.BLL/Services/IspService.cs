@@ -41,15 +41,27 @@ namespace InfoShop.Core.BLL.Services
                         ContractNumber = isp.ContractNumber,
                         ContractWith = isp.ContractWith,
                         Description = isp.Description,
-                        IspContacts = _mapper.Map<ICollection<IspContactDto>>(cont),
+                        IspContacts = _mapper.Map<List<IspContactDto>>(cont),
                         Name = isp.Name
                     })
                 .ToList();
         }
 
-        public Task<IspDto> GetIspAsync(long id)
+        public async Task<IspDto> GetIspAsync(long id)
         {
-            throw new NotImplementedException();
+            var isp = _mapper.Map<IspDto>(await _context.Isps
+                .FirstOrDefaultAsync(i => i.Id == id));
+
+            if (isp is not null)
+            {
+
+                isp.IspContacts = _mapper.Map<List<IspContactDto>>(
+                    await _context.IspContacts
+                    .Where(c => c.IspId == isp.Id)
+                    .ToListAsync());
+            }
+
+            return isp!;
         }
     }
 }
