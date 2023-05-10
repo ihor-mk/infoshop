@@ -25,7 +25,14 @@ builder.Services.AddTransient<IIspService, IspService>();
 builder.Services.AddDbContext<InfoShopCoreContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("InfoShopCoreDBConnection")));
 
+builder.Services.AddCors();
+
 var app = builder.Build();
+
+app.UseCors(opt => opt
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowAnyOrigin());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -33,6 +40,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 

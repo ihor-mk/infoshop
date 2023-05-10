@@ -1,4 +1,12 @@
 <app-header></app-header>
 <div class="main-content-wrp">
-    <router-outlet></router-outlet>
+    <div class="main-content-body">
+        <router-outlet></router-outlet>
+        <div class="market-list-wrp">
+            <app-markets-list></app-markets-list>
+        </div>
+        <div class="connections-list-wrp">
+            <app-connections-list></app-connections-list>
+        </div>
+    </div>
 </div>
