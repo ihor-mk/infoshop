@@ -27,6 +27,7 @@ namespace InfoShop.Core.BLL.Services
         public async Task<ICollection<MarketDto>> GetAllMarketsAsync()
         {
             return await _context.Markets
+                .OrderBy(m => m.Name)
                 .Select(m => _mapper.Map<MarketDto>(m))
                 .ToListAsync();
         }
