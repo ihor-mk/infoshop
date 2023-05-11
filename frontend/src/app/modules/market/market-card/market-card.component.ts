@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { MarketHelper } from 'src/app/helpers/market.helper';
 import { IMarket } from 'src/app/shared/models/IMarket';
 
 @Component({
@@ -8,4 +9,9 @@ import { IMarket } from 'src/app/shared/models/IMarket';
 })
 export class MarketCardComponent {
   @Input() market!: IMarket
+  constructor(private marketHelper: MarketHelper){}
+
+  openDetail() {
+    this.marketHelper.currentMarket = this.market;
+  }
 }
