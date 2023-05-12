@@ -10,6 +10,8 @@ namespace InfoShop.Core.Common.DTO.Connection
         public long IspId { get; set; }
         public ConnectionType Type { get; set; }
         public List<ConnectionDetailDto> ConnectionDetails { get; set; } = new List<ConnectionDetailDto>();
-        public string ConnectionPort { get; set; } = string.Empty;
+        public string ContractNumber { get; set; } = string.Empty;
+        public string ContractWith { get; set; } = string.Empty;
+        public string Interface { get; set; } = string.Empty;
     }
 }

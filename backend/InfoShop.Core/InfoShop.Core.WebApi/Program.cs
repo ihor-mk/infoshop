@@ -17,10 +17,12 @@ builder.Services.AddAutoMapper(cfg =>
     {
         cfg.AddProfile<MarketProfile>();
         cfg.AddProfile<IspProfile>();
+        cfg.AddProfile<ConnectionProfile>();
     });
 
 builder.Services.AddTransient<IMarketService, MarketService>();
 builder.Services.AddTransient<IIspService, IspService>();
+builder.Services.AddTransient<IConnectionService, ConnectionService>();
 
 builder.Services.AddDbContext<InfoShopCoreContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("InfoShopCoreDBConnection")));

@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using InfoShop.Core.BLL.Services.Abstract;
-using InfoShop.Core.Common.DTO.Isp.IspContact;
-using InfoShop.Core.Common.DTO.Isp;
 using InfoShop.Core.DAL.Context;
 using InfoShop.Core.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -51,7 +49,9 @@ namespace InfoShop.Core.BLL.Services
                             IspId = conn.IspId,
                             MarketId = conn.MarketId,
                             Type = conn.Type,
-                            ConnectionPort = conn.ConnectionPort,
+                            ContractNumber = conn.ContractNumber,
+                            ContractWith = conn.ContractWith,
+                            Interface = conn.Interface,
                             ConnectionDetails = _mapper.Map<List<ConnectionDetailDto>>(det)
                         })
                     .ToList();
