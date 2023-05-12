@@ -1,8 +1,8 @@
 export interface IMarket {
-    id: string,
+    id: number,
     name: string,
     address: string,
     phone: string,
-    internalNumber: string,
+    intrenalNumber: string,
     isActive: boolean
 }

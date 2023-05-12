@@ -2,13 +2,44 @@
     <div class="market-name-section">
         <div class="market-name">
             <span>
-                {{this.marketHelper.currentMarket.name}}
+                {{this.marketHelper.currentMarket.name}},
+                
+            </span>
+            <span class="market-address">
+                {{this.marketHelper.currentMarket.address}}
             </span>
         </div>
         <div class="market-region">
             <span>
                 (Ivano-Frankivsk region)
             </span>
+        </div>
+    </div>
+    <div class="market-other-details-wrp">
+
+        <div class="market-some-info-record" *ngIf="this.marketHelper.currentMarket.phone">
+            <div class="info-record-title">
+                <span>
+                    Мобільний номер:
+                </span>
+            </div>
+            <div class="info-record-data">
+                <span>
+                    {{this.marketHelper.currentMarket.phone}}
+                </span>
+            </div>
+        </div>
+        <div class="market-some-info-record" *ngIf="this.marketHelper.currentMarket.intrenalNumber">
+            <div class="info-record-title">
+                <span>
+                    Внутрішній номер:
+                </span>
+            </div>
+            <div class="info-record-data">
+                <span>
+                    {{this.marketHelper.currentMarket.intrenalNumber}}
+                </span>
+            </div>
         </div>
     </div>
 </div>
