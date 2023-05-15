@@ -31,7 +31,9 @@ namespace InfoShop.Core.DAL.Context
                     Name = "Кам'янець-Подільський 7",
                     Address = "вул. Князів Коріатовичів, 13",
                     IsActive = true,
-                    Phone = "+380675089930"
+                    Phone = "+380675089930",
+                    Region = Region.Khmelnytsk
+                    
                 },
 
                 new Market
@@ -40,7 +42,8 @@ namespace InfoShop.Core.DAL.Context
                     Name = "Володимир-Волинський 3",
                     Address = "вул. Князя Василька, 2",
                     IsActive = true,
-                    Phone = "+380675069673"
+                    Phone = "+380675069673",
+                    Region = Region.Volyn
                 },
 
                 new Market
@@ -49,7 +52,8 @@ namespace InfoShop.Core.DAL.Context
                     Name = "Снятин 5",
                     Address = "вул. Стефаника, 1",
                     IsActive = true,
-                    Phone = "+380671979140"
+                    Phone = "+380671979140",
+                    Region = Region.IvanoFrankivsk
                 },
 
                 new Market
@@ -58,7 +62,8 @@ namespace InfoShop.Core.DAL.Context
                     Name = "Шепетівка 1",
                     Address = "вул. Героїв Небесної Сотні, 33/1",
                     IsActive = true,
-                    Phone = "+380675084559"
+                    Phone = "+380675084559",
+                    Region = Region.Khmelnytsk
                 },
 
                 new Market
@@ -67,7 +72,8 @@ namespace InfoShop.Core.DAL.Context
                     Name = "Старий Самбір 1",
                     Address = "вул. Галицького Лева, 3а",
                     IsActive = true,
-                    Phone = "+380673429840"
+                    Phone = "+380673429840",
+                    Region = Region.Lviv
                 },
 
                 new Market
@@ -76,7 +82,8 @@ namespace InfoShop.Core.DAL.Context
                     Name = "Новоград-Волинський 2",
                     Address = "вул. Оржевської, 2",
                     IsActive = true,
-                    Phone = "+380673405315"
+                    Phone = "+380673405315",
+                    Region = Region.Zhytomyr
                 }
             };
         }

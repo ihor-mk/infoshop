@@ -7,6 +7,10 @@ import { IConnection } from "../shared/models/IConnection";
 })
 
 export class MarketHelper {
-    public currentMarket!: IMarket
-    public connections!: IConnection[] 
+    public currentMarket: IMarket = {
+        address: '',
+        name: '',
+        region: 0
+    }
+    public connections!: IConnection[]
 } 

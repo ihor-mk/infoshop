@@ -1,8 +1,9 @@
 export interface IMarket {
-    id: number,
+    id?: number,
     name: string,
     address: string,
-    phone: string,
-    intrenalNumber: string,
-    isActive: boolean
+    phone?: string,
+    intrenalNumber?: string,
+    isActive?: boolean,
+    region: number
 }

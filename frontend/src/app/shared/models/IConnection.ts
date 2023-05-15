@@ -1,11 +1,12 @@
 
 export interface IConnection {
     id: number,
-    connectionType: number,
+    type: number,
     connectionDetails: IConnectionDetails[],
     contractNumber: string,
     contractWith: string,
-    interface: string
+    interface: string,
+    ispId: number
 }
 export interface IConnectionDetails {
     key: string,

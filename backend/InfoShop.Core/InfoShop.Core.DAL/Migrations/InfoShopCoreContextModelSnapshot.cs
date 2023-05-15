@@ -490,6 +490,9 @@ namespace InfoShop.Core.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Region")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Markets");
@@ -502,7 +505,8 @@ namespace InfoShop.Core.DAL.Migrations
                             IntrenalNumber = "",
                             IsActive = true,
                             Name = "Кам'янець-Подільський 7",
-                            Phone = "+380675089930"
+                            Phone = "+380675089930",
+                            Region = 22
                         },
                         new
                         {
@@ -511,7 +515,8 @@ namespace InfoShop.Core.DAL.Migrations
                             IntrenalNumber = "",
                             IsActive = true,
                             Name = "Володимир-Волинський 3",
-                            Phone = "+380675069673"
+                            Phone = "+380675069673",
+                            Region = 3
                         },
                         new
                         {
@@ -520,7 +525,8 @@ namespace InfoShop.Core.DAL.Migrations
                             IntrenalNumber = "",
                             IsActive = true,
                             Name = "Снятин 5",
-                            Phone = "+380671979140"
+                            Phone = "+380671979140",
+                            Region = 9
                         },
                         new
                         {
@@ -529,7 +535,8 @@ namespace InfoShop.Core.DAL.Migrations
                             IntrenalNumber = "",
                             IsActive = true,
                             Name = "Шепетівка 1",
-                            Phone = "+380675084559"
+                            Phone = "+380675084559",
+                            Region = 22
                         },
                         new
                         {
@@ -538,7 +545,8 @@ namespace InfoShop.Core.DAL.Migrations
                             IntrenalNumber = "",
                             IsActive = true,
                             Name = "Старий Самбір 1",
-                            Phone = "+380673429840"
+                            Phone = "+380673429840",
+                            Region = 13
                         },
                         new
                         {
@@ -547,7 +555,8 @@ namespace InfoShop.Core.DAL.Migrations
                             IntrenalNumber = "",
                             IsActive = true,
                             Name = "Новоград-Волинський 2",
-                            Phone = "+380673405315"
+                            Phone = "+380673405315",
+                            Region = 6
                         });
                 });
 

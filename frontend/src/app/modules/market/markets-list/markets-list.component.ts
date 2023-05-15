@@ -20,7 +20,6 @@ export class MarketsListComponent implements OnInit {
     this.marketService.getMarkets().subscribe((data: IMarket[]) => {
         this.markets = data;
         this.marketHelper.currentMarket = this.markets[0]
-        console.log(this.markets);
     })
   }
 
