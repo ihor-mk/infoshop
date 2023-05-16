@@ -1,1 +1,12 @@
-<p>connections-list works!</p>
+<div class="connections-list-block-wrp">
+    <div class="connections-list-block-header">
+        <span>Підключення</span>
+    </div>
+    <div class="connections-list-content-wpr">
+        <div class="connection-wrp" *ngFor="let connection of this.marketHelper.connections">
+            <app-connection-card 
+                [connection]="connection">
+            </app-connection-card>
+        </div>
+    </div>
+</div>

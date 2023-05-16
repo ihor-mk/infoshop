@@ -36,6 +36,7 @@ namespace InfoShop.Core.DAL.Migrations
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IntrenalNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Region = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -130,15 +131,15 @@ namespace InfoShop.Core.DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Markets",
-                columns: new[] { "Id", "Address", "IntrenalNumber", "IsActive", "Name", "Phone" },
+                columns: new[] { "Id", "Address", "IntrenalNumber", "IsActive", "Name", "Phone", "Region" },
                 values: new object[,]
                 {
-                    { 1L, "вул. Князів Коріатовичів, 13", "", true, "Кам'янець-Подільський 7", "+380675089930" },
-                    { 2L, "вул. Князя Василька, 2", "", true, "Володимир-Волинський 3", "+380675069673" },
-                    { 3L, "вул. Стефаника, 1", "", true, "Снятин 5", "+380671979140" },
-                    { 4L, "вул. Героїв Небесної Сотні, 33/1", "", true, "Шепетівка 1", "+380675084559" },
-                    { 5L, "вул. Галицького Лева, 3а", "", true, "Старий Самбір 1", "+380673429840" },
-                    { 6L, "вул. Оржевської, 2", "", true, "Новоград-Волинський 2", "+380673405315" }
+                    { 1L, "вул. Князів Коріатовичів, 13", "", true, "Кам'янець-Подільський 7", "+380675089930", 22 },
+                    { 2L, "вул. Князя Василька, 2", "", true, "Володимир-Волинський 3", "+380675069673", 3 },
+                    { 3L, "вул. Стефаника, 1", "", true, "Снятин 5", "+380671979140", 9 },
+                    { 4L, "вул. Героїв Небесної Сотні, 33/1", "", true, "Шепетівка 1", "+380675084559", 22 },
+                    { 5L, "вул. Галицького Лева, 3а", "", true, "Старий Самбір 1", "+380673429840", 13 },
+                    { 6L, "вул. Оржевської, 2", "", true, "Новоград-Волинський 2", "+380673405315", 6 }
                 });
 
             migrationBuilder.InsertData(

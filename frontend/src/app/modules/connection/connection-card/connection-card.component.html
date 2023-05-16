@@ -1,1 +1,52 @@
-<p>connection-card works!</p>
+<div class="connection-wrp">
+    <div class="isp-name">
+        <span>{{getIspName()}}</span>
+    </div>
+    <div class="connection-details-wrp">
+        <div class="connection-detail-record-wrp">
+            <div class="connection-detail-record-key">
+                <span>На кого оформлено:</span>
+            </div>
+            <div class="connection-detail-record-value">
+                <span> {{connection.contractWith}} </span>
+            </div>
+        </div>
+        <div class="connection-detail-record-wrp">
+            <div class="connection-detail-record-key">
+                <span> Номер договору: </span>
+            </div>
+            <div class="connection-detail-record-value">
+                <span> {{connection.contractNumber}} </span>
+            </div>
+        </div>
+        <div class="connection-detail-record-wrp">
+            <div class="connection-detail-record-key">
+                <span> Порт підключення: </span>
+            </div>
+            <div class="connection-detail-record-value">
+                <span> {{connection.interface}} </span>
+            </div>
+        </div>
+    </div>
+    <div class="connection-configuration-wrp">
+        <div class="connection-configuration-title">
+            <span> Деталі підключення</span>
+        </div>
+        <div class="connection-detail-record-wrp">
+            <div class="connection-detail-record-key">
+                <span> Тип підключення: </span>
+            </div>
+            <div class="connection-detail-record-value text-bold">
+                <span> {{getConnectionType()}} </span>
+            </div>
+        </div>
+        <div class="connection-detail-record-wrp" *ngFor="let detail of connection.connectionDetails">
+            <div class="connection-detail-record-key">
+                <span> {{detail.key}} </span>
+            </div>
+            <div class="connection-detail-record-value">
+                <span> {{detail.value}} </span>
+            </div>
+        </div>
+    </div>
+</div>

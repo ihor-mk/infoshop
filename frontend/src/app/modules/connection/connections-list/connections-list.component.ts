@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MarketHelper } from 'src/app/helpers/market.helper';
 
 @Component({
   selector: 'app-connections-list',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./connections-list.component.sass']
 })
 export class ConnectionsListComponent {
+  constructor(public marketHelper: MarketHelper) {  }
 
 }
