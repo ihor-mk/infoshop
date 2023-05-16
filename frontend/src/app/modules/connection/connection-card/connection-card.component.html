@@ -1,6 +1,6 @@
 <div class="connection-wrp">
     <div class="isp-name">
-        <span>{{getIspName()}}</span>
+        <span>{{isp.name}}</span>
     </div>
     <div class="connection-details-wrp">
         <div class="connection-detail-record-wrp">
@@ -47,6 +47,21 @@
             <div class="connection-detail-record-value">
                 <span> {{detail.value}} </span>
             </div>
+        </div>
+    </div>
+    <div class="connection-configuration-wrp" *ngIf="isp.ispContacts?.length">
+        <div class="connection-configuration-title">
+            <span> Контакти провайдера</span>
+        </div>
+        
+        <div class="connection-detail-record-wrp" *ngFor="let contact of isp.ispContacts">
+            <div class="connection-detail-record-value">
+                <span> {{contact.value}}</span>
+            </div>
+            <div class="connection-detail-record-key isp-contacts">
+                <span> {{contact.description}} </span>
+            </div>
+            
         </div>
     </div>
 </div>

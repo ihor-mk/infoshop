@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { HttpService } from "../core/services/http.service";
-import { IConnection } from "../shared/models/IConnection";
 import { IIsp } from "../shared/models/IIsp";
 
 @Injectable({
@@ -15,4 +14,6 @@ export class IspService {
     public getIsp(ispId: number) {
         return this.httpService.getById<IIsp>(`${this.routePrefix}`,`${ispId}`);
     }
+
+    
 }

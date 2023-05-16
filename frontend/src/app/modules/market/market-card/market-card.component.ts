@@ -21,8 +21,10 @@ export class MarketCardComponent {
   openDetail() {
     this.marketHelper.currentMarket = this.market;
     
-    this.connectionService.getConnections(this.market.id!).subscribe((data: IConnection[]) => {
-      this.marketHelper.connections = data
-  })
+    this.connectionService
+      .getConnections(this.market.id!)
+      .subscribe((data: IConnection[]) => {
+        this.marketHelper.connections = data
+    })
   }
 }

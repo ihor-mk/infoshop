@@ -10,29 +10,19 @@ import { IIsp } from 'src/app/shared/models/IIsp';
 })
 export class ConnectionCardComponent implements OnInit {
   @Input() connection!: IConnection
-  isp!: IIsp
+
+  isp: IIsp = { name: '' }
+
   connectionType!: string
 
-  constructor(private ispService: IspService) {
-    
-   }
+  constructor(private ispService: IspService) {}
 
   ngOnInit(): void {
-    
     if (this.connection) {
       this.ispService.getIsp(this.connection.ispId).subscribe((data: IIsp) => {
         this.isp = data
       })
     }
-
-    
-  }
-
-  getIspName(){
-    if (this.isp) {
-        return this.isp.name
-    }
-    return ''
   }
 
   getConnectionType() {
